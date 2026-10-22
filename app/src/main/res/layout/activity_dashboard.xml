@@ -232,10 +232,11 @@
                 android:layout_marginTop="12dp"
                 android:text="@string/logout_button"
                 android:textAllCaps="false"
+                android:textColor="@color/primary"
+                app:backgroundTint="@android:color/transparent"
+                app:cornerRadius="14dp"
                 app:strokeColor="@color/primary"
-                app:strokeWidth="1dp"
-                style="@style/Widget.Material3.Button.OutlinedButton"
-                android:textColor="@color/primary" />
+                app:strokeWidth="1dp" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

@@ -17,6 +17,7 @@ class ProfileActivity : AppCompatActivity() {
         binding.profileEspecialidad.text = "Ginecología y obstetricia"
         binding.profileClinic.text = "Clínica Gynocare Central"
         binding.profilePhone.text = "+52 555 123 4567"
+
         binding.backButton.setOnClickListener { finish() }
     }
 }
