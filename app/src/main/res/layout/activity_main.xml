@@ -1,70 +1,101 @@
-package com.gynocare.app
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true">
 
-import android.content.Intent
-import android.net.Uri
-import android.os.Bundle
-import android.view.View
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import com.gynocare.app.databinding.ActivityMainBinding
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
 
-class MainActivity : AppCompatActivity() {
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textColor="@color/primary"
+            android:textSize="34sp"
+            android:textStyle="bold" />
 
-    private lateinit var binding: ActivityMainBinding
+        <TextView
+            android:id="@+id/subtitleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/login_subtitle"
+            android:textAlignment="center"
+            android:textColor="@color/text_secondary"
+            android:textSize="16sp" />
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="8dp">
 
-        binding.scheduleButton.setOnClickListener {
-            agendarCita()
-        }
-    }
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="22dp">
 
-    private fun agendarCita() {
-        val nombre = binding.patientNameInput.text.toString().trim()
-        val telefono = binding.patientPhoneInput.text.toString().trim()
-        val fecha = binding.dateInput.text.toString().trim()
-        val hora = binding.timeInput.text.toString().trim()
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/user_hint"
+                    app:boxBackgroundColor="@color/input_background"
+                    app:boxBackgroundMode="filled"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp">
 
-        if (nombre.isEmpty() || telefono.isEmpty() || fecha.isEmpty() || hora.isEmpty()) {
-            Toast.makeText(this, "Completa todos los campos para agendar la cita.", Toast.LENGTH_LONG).show()
-            return
-        }
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/userInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-        val numeroWhatsApp = normalizarTelefono(telefono)
-        if (numeroWhatsApp.isEmpty()) {
-            Toast.makeText(this, "Ingresa un número de WhatsApp válido.", Toast.LENGTH_LONG).show()
-            return
-        }
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="@string/password_hint"
+                    app:boxBackgroundColor="@color/input_background"
+                    app:boxBackgroundMode="filled"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:endIconMode="password_toggle">
 
-        val mensaje = "Hola $nombre, este es un recordatorio de tu cita en Gynocare. Tu consulta está programada para el $fecha a las $hora. Te esperamos."
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/passwordInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-        binding.summaryCard.visibility = View.VISIBLE
-        binding.summaryTitle.text = getString(R.string.summary_title)
-        binding.summaryText.text = "Cita agendada para $nombre el $fecha a las $hora.\nSe preparó el recordatorio de WhatsApp."
-
-        abrirWhatsAppRecordatorio(numeroWhatsApp, mensaje)
-    }
-
-    private fun abrirWhatsAppRecordatorio(telefono: String, mensaje: String) {
-        val uri = Uri.parse("https://wa.me/$telefono?text=${Uri.encode(mensaje)}")
-        val intent = Intent(Intent.ACTION_VIEW, uri)
-
-        if (intent.resolveActivity(packageManager) != null) {
-            startActivity(intent)
-        } else {
-            val fallback = Intent(
-                Intent.ACTION_VIEW,
-                Uri.parse("https://api.whatsapp.com/send?phone=$telefono&text=${Uri.encode(mensaje)}")
-            )
-            startActivity(fallback)
-        }
-    }
-
-    private fun normalizarTelefono(telefono: String): String {
-        val soloDigitos = telefono.replace("[^0-9]".toRegex(), "")
-        return if (soloDigitos.length >= 10) soloDigitos else ""
-    }
-}
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/loginButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/login_button"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    app:backgroundTint="@color/primary"
+                    app:cornerRadius="14dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</ScrollView>

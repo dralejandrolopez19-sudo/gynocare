@@ -7,6 +7,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Gynocare">
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -15,6 +16,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".AppointmentActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ImageStudyActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".VaccineActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".AnalyticsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

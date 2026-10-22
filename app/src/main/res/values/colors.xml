@@ -1,10 +1,52 @@
 <resources>
     <string name="app_name">Gynocare</string>
-    <string name="subtitle">Agenda la cita y envía recordatorio por WhatsApp</string>
+    <string name="login_subtitle">Clínica inteligente para citas médicas</string>
+    <string name="user_hint">Usuario</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_button">Iniciar sesión</string>
+
+    <string name="dashboard_welcome">Bienvenida</string>
+    <string name="today_title">Hoy</string>
+    <string name="reminders_title">Record.</string>
+    <string name="analysis_title">Análisis</string>
+    <string name="dashboard_status">Agenda activa</string>
+    <string name="dashboard_message">Puedes revisar pacientes, coordinar citas, estudios, vacunas y analíticas.</string>
+    <string name="appointments_button">Gestionar citas</string>
+    <string name="images_button">Estudios de imagen</string>
+    <string name="vaccines_button">Vacunas</string>
+    <string name="analytics_button">Analíticas</string>
+    <string name="profile_button">Perfil</string>
+    <string name="logout_button">Cerrar sesión</string>
+
+    <string name="form_title">Nueva cita</string>
     <string name="patient_name_hint">Nombre de la paciente</string>
     <string name="phone_hint">Número de WhatsApp</string>
-    <string name="date_hint">Fecha de la cita</string>
-    <string name="time_hint">Hora de la cita</string>
+    <string name="date_hint">Fecha</string>
+    <string name="time_hint">Hora</string>
     <string name="schedule_button">Agendar cita</string>
     <string name="summary_title">Cita confirmada</string>
+    <string name="send_reminder_button">Enviar recordatorio por WhatsApp</string>
+    <string name="back_button">Atrás</string>
+
+    <string name="image_study_title">Estudios de imagen</string>
+    <string name="study_name_hint">Nombre del estudio</string>
+    <string name="study_type_hint">Tipo de estudio</string>
+    <string name="study_date_hint">Fecha del estudio</string>
+    <string name="report_hint">Reporte o hallazgo</string>
+    <string name="save_study_button">Guardar estudio</string>
+
+    <string name="vaccine_title">Vacunas de la embarazada</string>
+    <string name="vaccine_name_hint">Nombre de la vacuna</string>
+    <string name="vaccine_date_hint">Fecha de aplicación</string>
+    <string name="vaccine_dose_hint">Dosis</string>
+    <string name="pregnancy_stage_hint">Etapa del embarazo</string>
+    <string name="save_vaccine_button">Guardar vacuna</string>
+
+    <string name="analytics_title">Analíticas</string>
+    <string name="total_patients_label">Pacientes registradas</string>
+    <string name="consultations_label">Consultas en el mes</string>
+    <string name="compliance_label">Cumplimiento</string>
+    <string name="follow_up_label">Seguimientos</string>
+    <string name="image_studies_label">Estudios de imagen</string>
+    <string name="vaccine_coverage_label">Cobertura de vacunas</string>
 </resources>
