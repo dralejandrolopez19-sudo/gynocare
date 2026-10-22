@@ -1,11 +1,26 @@
-<div align="center">
+# Gynocare
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+Aplicación Android desarrollada en Kotlin para iniciar el proyecto como una app nativa móvil.
 
-  <h1>Built with AI Studio</h2>
+## Estructura
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+- `app/` -> código fuente de la aplicación Android
+- `build.gradle.kts` -> configuración del proyecto Gradle
+- `settings.gradle.kts` -> módulos de Gradle
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## Requisitos
 
-</div>
+- Android Studio Hedgehog o superior
+- JDK 17
+- SDK Android 34
+
+## Ejecutar
+
+1. Abre el proyecto en Android Studio.
+2. Sincroniza Gradle.
+3. Selecciona un emulador o dispositivo físico.
+4. Ejecuta la aplicación.
+
+## Estado actual
+
+Se ha dejado una base funcional mínima para una app Android en Kotlin con una pantalla principal.
