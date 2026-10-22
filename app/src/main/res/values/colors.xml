@@ -1,4 +1,10 @@
 <resources>
-    <color name="primary">#6750A4</color>
-    <color name="background">#F7F4FF</color>
+    <string name="app_name">Gynocare</string>
+    <string name="subtitle">Agenda la cita y envía recordatorio por WhatsApp</string>
+    <string name="patient_name_hint">Nombre de la paciente</string>
+    <string name="phone_hint">Número de WhatsApp</string>
+    <string name="date_hint">Fecha de la cita</string>
+    <string name="time_hint">Hora de la cita</string>
+    <string name="schedule_button">Agendar cita</string>
+    <string name="summary_title">Cita confirmada</string>
 </resources>
